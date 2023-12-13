@@ -112,13 +112,12 @@ with col1:
                text=labels1)
     fig1.update_layout(
                        title={
-                              'x':0.6,
+                              'x':0.2,
                               'y':1
                               },
                        yaxis=dict(
                        autorange='reversed'
                         ),
-                       autosize=True,
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig1,
@@ -132,14 +131,10 @@ with col2:
                 title = "Least Generated Revenues Product",
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels2)
-    fig2.update_layout(height = 500,
-                       width = 1200,
-                       
-                       title={
+    fig2.update_layout(title={
                               'x':0.6,
                               'y':1
                               },
-                              autosize=True,
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig2,
@@ -164,15 +159,13 @@ with tab1:
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels
                )
-        fig3.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title={
+        fig3.update_layout(title={
                               'x':0.6,
                               'y':1
                               },
                             yaxis=dict(
                             autorange='reversed'
                             ),
-                            autosize=True,
                            coloraxis_showscale=False
                            )
         st.plotly_chart(fig3,
@@ -191,12 +184,10 @@ with tab1:
                           names='customer_state',
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig4.update_traces(sort=False)
-        fig4.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title={
+        fig4.update_layout(title={
                               'x':0.5,
                               'y':1
-                              },
-                              autosize=True
+                              }
             )
         st.plotly_chart(fig4,
                         use_container_width=True)
@@ -216,15 +207,13 @@ with tab2:
                color_discrete_sequence=px.colors.qualitative.Vivid,
                text=labels
                )
-        fig5.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title={
+        fig5.update_layout(title={
                               'x':0.6,
                               'y':1
                               },
                             yaxis=dict(
                             categoryorder='total ascending'
-                            ),
-                            autosize=True
+                            )
                            )
         st.plotly_chart(fig5,
                         use_container_width=True)
@@ -242,12 +231,10 @@ with tab2:
                           title= "Generated Revenues by City (%)",
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig6.update_traces(sort=False)
-        fig6.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title={
+        fig6.update_layout(title={
                               'x':0.5,
                               'y':1
-                              },
-                              autosize=True
+                              }
             )
         st.plotly_chart(fig6,
                         use_container_width=True)
