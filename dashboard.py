@@ -81,7 +81,7 @@ with col1:
     st.metric("Total Order", value=total_orders)
  
 with col2:
-    total_revenue = format_currency(df_time_price['payment_value'].sum(), "BRL", locale='pt_Br') 
+    total_revenue = df_time_price['payment_value'].sum()
     st.metric("Total Revenue", value=total_revenue)
 
 line_time_price = df_time_price.groupby('order_date', as_index=False)['order_id'].nunique()
