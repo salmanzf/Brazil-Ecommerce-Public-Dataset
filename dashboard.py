@@ -110,8 +110,7 @@ with col1:
                color_continuous_scale=px.colors.sequential.tempo,
                title='Most Generated Revenue by Product',
                text=labels1)
-    fig1.update_layout(
-                       yaxis=dict(
+    fig1.update_layout(yaxis=dict(
                        autorange='reversed'
                         ),
                        coloraxis_showscale=False
