@@ -8,6 +8,7 @@ import plotly.express as px
 import plotly.io as pio
 import plotly.graph_objects as go
 import plotly.subplots as sp
+from babel.numbers import format_currency
 
 st.header('Dashboard E-Commerce Public Dataset')
 #IMPORT DATA
@@ -107,13 +108,13 @@ with col1:
                 'payment_value':'Revenue',
                 'product_category_name_english':'Product Category'},
                color_continuous_scale=px.colors.sequential.tempo,
+               title='Most Generated Revenue by Product',
                text=labels1)
-    fig1.update_layout(title_text = "Most Generated Revenues by Product",
+    fig1.update_layout(
                        title={
                               'x':0.6,
                               'y':1
                               },
-                       title_font_size = 20,
                        yaxis=dict(
                        autorange='reversed'
                         ),
@@ -126,14 +127,16 @@ with col2:
               labels={
                 'payment_value':'Revenue',
                 'product_category_name_english':'Product Category'},
+                title = "Least Generated Revenues Product",
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels2)
-    fig2.update_layout(title_text = "Least Generated Revenues Product",
+    fig2.update_layout(height = 500,
+                       width = 1200,
+                       
                        title={
                               'x':0.6,
                               'y':1
                               },
-                       title_font_size = 20,
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig2)
@@ -153,10 +156,11 @@ with tab1:
               labels={
                 'payment_value':'Revenue',
                 'customer_state':'State'},
+                title = "Most Generated Revenues State",
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels
                )
-        fig3.update_layout(title_text = "Most Generated Revenues State",
+        fig3.update_layout(margin=dict(l=20, r=0, t=20, b=0),
                            title={
                               'x':0.6,
                               'y':1
@@ -164,7 +168,6 @@ with tab1:
                             yaxis=dict(
                             autorange='reversed'
                             ),
-                           title_font_size = 20,
                            coloraxis_showscale=False
                            )
         st.plotly_chart(fig3)
@@ -178,15 +181,15 @@ with tab1:
         pie_revenue_state = pd.concat([top_5, new_row]).reset_index(drop=True)
         fig4 = px.pie(pie_revenue_state,
                           values='payment_value',
+                          title = "Generated Revenues by State (%)",
                           names='customer_state',
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig4.update_traces(sort=False)
-        fig4.update_layout(title_text = "Generated Revenues by State (%)",
+        fig4.update_layout(margin=dict(l=20, r=0, t=20, b=0),
                            title={
                               'x':0.5,
                               'y':1
-                              },
-                           title_font_size = 20
+                              }
             )
         st.plotly_chart(fig4)
 with tab2:
@@ -200,18 +203,18 @@ with tab2:
               labels={
                 'payment_value':'Revenue',
                 'customer_city':'City'},
+                title = "Most Generated Revenues City",
                color_discrete_sequence=px.colors.qualitative.Vivid,
                text=labels
                )
-        fig5.update_layout(title_text = "Most Generated Revenues City",
+        fig5.update_layout(margin=dict(l=20, r=0, t=20, b=0),
                            title={
                               'x':0.6,
                               'y':1
                               },
                             yaxis=dict(
                             categoryorder='total ascending'
-                            ),
-                           title_font_size = 20
+                            )
                            )
         st.plotly_chart(fig5)
     with col2:
@@ -225,14 +228,14 @@ with tab2:
         fig6 = px.pie(pie_revenue_city,
                           values='payment_value',
                           names='customer_city',
+                          title= "Generated Revenues by City (%)",
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig6.update_traces(sort=False)
-        fig6.update_layout(title_text = "Generated Revenues by City (%)",
+        fig6.update_layout(margin=dict(l=20, r=0, t=20, b=0),
                            title={
                               'x':0.5,
                               'y':1
-                              },
-                           title_font_size = 20
+                              }
             )
         st.plotly_chart(fig6)
 
