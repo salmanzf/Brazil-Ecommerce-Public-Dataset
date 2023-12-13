@@ -111,10 +111,6 @@ with col1:
                title='Most Generated Revenue by Product',
                text=labels1)
     fig1.update_layout(
-                       title={
-                              'x':0.25,
-                              'y':1
-                              },
                        yaxis=dict(
                        autorange='reversed'
                         ),
