@@ -207,7 +207,7 @@ with tab2:
                text=labels
                )
         fig5.update_layout(title={
-                              'x':0.6,
+                              'x':0.25,
                               'y':1
                               },
                             yaxis=dict(
