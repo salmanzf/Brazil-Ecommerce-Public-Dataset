@@ -108,9 +108,7 @@ with col1:
                 'product_category_name_english':'Product Category'},
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels1)
-    fig1.update_layout(height = 500,
-                       width = 1200,
-                       title_text = "Most Generated Revenues by Product",
+    fig1.update_layout(title_text = "Most Generated Revenues by Product",
                        title={
                               'x':0.6,
                               'y':1
@@ -130,9 +128,7 @@ with col2:
                 'product_category_name_english':'Product Category'},
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels2)
-    fig2.update_layout(height = 500,
-                       width = 1200,
-                       title_text = "Least Generated Revenues Product",
+    fig2.update_layout(title_text = "Least Generated Revenues Product",
                        title={
                               'x':0.6,
                               'y':1
@@ -160,8 +156,7 @@ with tab1:
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels
                )
-        fig3.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title_text = "Most Generated Revenues State",
+        fig3.update_layout(title_text = "Most Generated Revenues State",
                            title={
                               'x':0.6,
                               'y':1
@@ -186,8 +181,7 @@ with tab1:
                           names='customer_state',
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig4.update_traces(sort=False)
-        fig4.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title_text = "Generated Revenues by State (%)",
+        fig4.update_layout(title_text = "Generated Revenues by State (%)",
                            title={
                               'x':0.5,
                               'y':1
@@ -209,8 +203,7 @@ with tab2:
                color_discrete_sequence=px.colors.qualitative.Vivid,
                text=labels
                )
-        fig5.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title_text = "Most Generated Revenues City",
+        fig5.update_layout(title_text = "Most Generated Revenues City",
                            title={
                               'x':0.6,
                               'y':1
@@ -234,8 +227,7 @@ with tab2:
                           names='customer_city',
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig6.update_traces(sort=False)
-        fig6.update_layout(margin=dict(l=20, r=0, t=20, b=0),
-                           title_text = "Generated Revenues by City (%)",
+        fig6.update_layout(title_text = "Generated Revenues by City (%)",
                            title={
                               'x':0.5,
                               'y':1
