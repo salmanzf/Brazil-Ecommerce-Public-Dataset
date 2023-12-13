@@ -8,7 +8,7 @@ import plotly.express as px
 import plotly.io as pio
 import plotly.graph_objects as go
 import plotly.subplots as sp
-from babel import format_currency
+import babel.numbers.format_currency
 
 st.header('Dashboard E-Commerce Public Dataset')
 #IMPORT DATA
