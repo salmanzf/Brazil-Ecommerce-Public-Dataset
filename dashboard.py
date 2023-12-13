@@ -117,6 +117,7 @@ with col1:
                        yaxis=dict(
                        autorange='reversed'
                         ),
+                       autosize=True,
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig1)
@@ -136,6 +137,7 @@ with col2:
                               'x':0.6,
                               'y':1
                               },
+                              autosize=True,
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig2)
@@ -167,6 +169,7 @@ with tab1:
                             yaxis=dict(
                             autorange='reversed'
                             ),
+                            autosize=True,
                            coloraxis_showscale=False
                            )
         st.plotly_chart(fig3)
@@ -188,7 +191,8 @@ with tab1:
                            title={
                               'x':0.5,
                               'y':1
-                              }
+                              },
+                              autosize=True
             )
         st.plotly_chart(fig4)
 with tab2:
@@ -213,7 +217,8 @@ with tab2:
                               },
                             yaxis=dict(
                             categoryorder='total ascending'
-                            )
+                            ),
+                            autosize=True
                            )
         st.plotly_chart(fig5)
     with col2:
@@ -234,7 +239,8 @@ with tab2:
                            title={
                               'x':0.5,
                               'y':1
-                              }
+                              },
+                              autosize=True
             )
         st.plotly_chart(fig6)
 
