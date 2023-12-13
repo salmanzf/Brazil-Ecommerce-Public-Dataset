@@ -112,7 +112,7 @@ with col1:
                text=labels1)
     fig1.update_layout(
                        title={
-                              'x':0.2,
+                              'x':0.25,
                               'y':1
                               },
                        yaxis=dict(
@@ -131,10 +131,7 @@ with col2:
                 title = "Least Generated Revenues Product",
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels2)
-    fig2.update_layout(title={
-                              'x':0.6,
-                              'y':1
-                              },
+    fig2.update_layout(
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig2,
