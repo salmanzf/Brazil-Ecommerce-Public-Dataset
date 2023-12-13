@@ -92,7 +92,8 @@ fig0 = px.line(line_time_price,
                 'order_id':'Total Order'})
 fig0.update_layout(coloraxis_showscale=False
     )
-st.plotly_chart(fig0)
+st.plotly_chart(fig0,
+                use_container_width=True)
 
 #GENERATED REVENUE BY PRODUCT
 df_revenue_product = df_time_price.groupby('product_category_name_english', as_index=False)['payment_value'].sum().sort_values('payment_value', ascending=False).reset_index(drop=True)
@@ -120,7 +121,8 @@ with col1:
                        autosize=True,
                        coloraxis_showscale=False
     )
-    st.plotly_chart(fig1)
+    st.plotly_chart(fig1,
+                    use_container_width=True)
 with col2:
     fig2 = px.bar(df_revenue_product.tail(10), x="payment_value", y="product_category_name_english",
               color="payment_value",
@@ -140,7 +142,8 @@ with col2:
                               autosize=True,
                        coloraxis_showscale=False
     )
-    st.plotly_chart(fig2)
+    st.plotly_chart(fig2,
+                    use_container_width=True)
 
 #MOST & LEAST GENERATED REVENUE REGION----------------------------------
 st.subheader('Generated Revenue by State & City')
@@ -172,7 +175,8 @@ with tab1:
                             autosize=True,
                            coloraxis_showscale=False
                            )
-        st.plotly_chart(fig3)
+        st.plotly_chart(fig3,
+                        use_container_width=True)
     with col2:
         top_5 = revenue_area_state[:5]
         new_row = pd.DataFrame(data={
@@ -194,7 +198,9 @@ with tab1:
                               },
                               autosize=True
             )
-        st.plotly_chart(fig4)
+        st.plotly_chart(fig4,
+                        use_container_width=True)
+
 with tab2:
     revenue_area_city = revenue_area.groupby(['customer_city','customer_state'], as_index=False)['payment_value'].sum().sort_values('payment_value', ascending=False).reset_index(drop=True)
     revenue_area_city['percentage'] = round((revenue_area_city['payment_value']/revenue_area_city['payment_value'].sum())*100, 2)
@@ -220,7 +226,8 @@ with tab2:
                             ),
                             autosize=True
                            )
-        st.plotly_chart(fig5)
+        st.plotly_chart(fig5,
+                        use_container_width=True)
     with col2:
         top_5 = revenue_area_city[:5]
         new_row = pd.DataFrame(data={
@@ -242,7 +249,8 @@ with tab2:
                               },
                               autosize=True
             )
-        st.plotly_chart(fig6)
+        st.plotly_chart(fig6,
+                        use_container_width=True)
 
 
 
