@@ -110,7 +110,11 @@ with col1:
                color_continuous_scale=px.colors.sequential.tempo,
                title='Most Generated Revenue by Product',
                text=labels1)
-    fig1.update_layout(yaxis=dict(
+    fig1.update_layout(title={
+                              'x':0.25,
+                              'y':1
+                              },
+                        yaxis=dict(
                        autorange='reversed'
                         ),
                        coloraxis_showscale=False
@@ -126,7 +130,10 @@ with col2:
                 title = "Least Generated Revenues Product",
                color_continuous_scale=px.colors.sequential.tempo,
                text=labels2)
-    fig2.update_layout(
+    fig2.update_layout(title={
+                              'x':0.25,
+                              'y':1
+                              },
                        coloraxis_showscale=False
     )
     st.plotly_chart(fig2,
@@ -152,7 +159,7 @@ with tab1:
                text=labels
                )
         fig3.update_layout(title={
-                              'x':0.6,
+                              'x':0.25,
                               'y':1
                               },
                             yaxis=dict(
@@ -177,7 +184,7 @@ with tab1:
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig4.update_traces(sort=False)
         fig4.update_layout(title={
-                              'x':0.5,
+                              'x':0.25,
                               'y':1
                               }
             )
@@ -224,7 +231,7 @@ with tab2:
                           color_discrete_sequence=px.colors.qualitative.Antique)
         fig6.update_traces(sort=False)
         fig6.update_layout(title={
-                              'x':0.5,
+                              'x':0.25,
                               'y':1
                               }
             )
